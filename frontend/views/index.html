@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <?!=include('frontend/config/cdn')?>
+</head>
+
+<body>
+<div id="root"></div>
+</body>
+
+
+
+<componets style= " display:none;">
+
+<!-- importaciones-->
+
+<!-- Constantes-->
+<?!= include('frontend/config/constantesCdn')?>
+
+<!-- Rutas-->
+<?!= include('frontend/routes/Routes')?>
+<!-- vistas-->
+ <?!= include('frontend/views/App')?>
+
+</componets>
+</html>
