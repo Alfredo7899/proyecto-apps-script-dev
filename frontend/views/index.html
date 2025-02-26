@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?!=include('frontend/config/cdn')?>
+    <?!= include('frontend/config/cdn') ?>
+    
 </head>
-
 <body>
-<div id="root"></div>
+   <div id="root"></div>
 </body>
 
+<components style="display: none;">
 
+    <!-- importaciones -->
 
-<componets style= " display:none;">
+    <!-- constantes -->
+    <?!= include('frontend/config/constantesCdn') ?>
 
-<!-- importaciones-->
+    <!-- rutas -->
+    <?!= include('frontend/routes/Routes') ?>
+    
+     <!-- helpers -->
+     <?!= include('frontend/helpers/modalesNotificaciones') ?>
 
-<!-- Constantes-->
-<?!= include('frontend/config/constantesCdn')?>
+    <!-- vistas -->
+    <?!= include('frontend/views/Inicio') ?>
+    <?!= include('frontend/views/usuarios/Usuarios') ?>
+    <?!= include('frontend/views/formularios/FormularioRegistro') ?>
+    <?!= include('frontend/components/Header') ?>
+    
 
-<!-- Rutas-->
-<?!= include('frontend/routes/Routes')?>
+    <!-- Componente raiz -->
+    <?!= include('frontend/views/App') ?>
 
-<!-- vistas-->
-<?!= include('frontend/views/Inicio')?>
-<?!= include('frontend/views/formularios/FormularioRegistro')?>
-<?!= include('frontend/components/Header')?>
+</components>
 
-<!-- componente raíz-->
- <?!= include('frontend/views/App')?>
-
-</componets>
 </html>
