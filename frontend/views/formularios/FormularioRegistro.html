@@ -7,7 +7,7 @@ function FormularioRegistro() {
 
 const guardarFormulario = (datosFormulario)=> {
 
-  notificacionGuardando = ("Guardando Usuario")
+  notificacionGuardando("Guardando Usuario")
 
   const id=v4();
 
@@ -16,7 +16,7 @@ const guardarFormulario = (datosFormulario)=> {
   google.script.run.withSuccessHandler(({titulo, descripcion}) =>{
     notificacionTareaTerminada(titulo, descripcion);
     form.resetFields();
-  }).guardarUsuario({ id, ...datosFormulario }) 
+  }).guardarUsuario(JSON.stringify({ id, ...datosFormulario })) 
  }
   
     return (

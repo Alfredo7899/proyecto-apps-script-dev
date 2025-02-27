@@ -1,8 +1,9 @@
 function guardarUsuario(usuario) {
 try {
-    const {id, nombreCompleto, correo, contraseña} = usuario;
+    // const {id, nombreCompleto, correo, contraseña} = usuario;
     const sheetUsuarios= obtenerSheet(env_().SH_REGISTRO_USUARIOS);
-    sheetUsuarios.appendRow([id, nombreCompleto, correo, contraseña]);  
+    Insert(JSON.parse(usuario), sheetUsuarios);
+    // sheetUsuarios.appendRow([id, nombreCompleto, correo, contraseña]);  
     return{
       titulo:"Registro exitoso" ,
       descripcion: "Ya se encuentra el usuario en la base de datos."
@@ -18,6 +19,7 @@ return{
  
 }
 
-function listarUsuarios() {
-    return obtenerDatos(env_().SH_REGISTRO_USUARIOS)
+function listarUsuarios(id = undefined) {
+    //return obtenerDatos(env_().SH_REGISTRO_USUARIOS)
+    return JSON.stringify(_read(obtenerSheet(env_().SH_REGISTRO_USUARIOS), id));
 }
